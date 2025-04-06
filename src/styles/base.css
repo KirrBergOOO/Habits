@@ -1,0 +1,135 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Убираем стандартный стиль списков */
+ul, ol {
+  list-style: none;
+}
+
+/* Убираем подчеркивание у ссылок */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Настройки для изображений */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Отключаем изменение размера textarea */
+textarea {
+  resize: none;
+}
+
+/* Убираем стрелки у input[type="number"] */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+  /* Цвета */
+  --color-primary: #3498db;
+  --color-danger: #e74c3c;
+  --color-success: #2ecc71;
+  --color-warning: #f39c12;
+  --color-dark: #2c3e50;
+  --color-light: #ecf0f1;
+  --color-gray: #95a5a6;
+
+  /* Типографика */
+  --font-main: 'Roboto', sans-serif;
+  --font-size-base: 16px;
+  --line-height: 1.6;
+
+  /* Тени */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== BASE TYPOGRAPHY ===== */
+body {
+  font-family: var(--font-main);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  color: var(--color-dark);
+  background-color: #f5f5f5;
+}
+
+/* Заголовки */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+/* Параграфы и текстовые элементы */
+p {
+  margin-bottom: 1rem;
+}
+
+/* ===== BASE LAYOUT ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Кнопки */
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: darken(var(--color-primary), 10%);
+}
+
+/* Формы */
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--color-gray);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-center { text-align: center; }
+.text-danger { color: var(--color-danger); }
+.mt-1 { margin-top: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.p-2 { padding: 2rem; }
+
+/* ===== MEDIA QUERIES (Адаптивность) ===== */
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 14px;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+}
